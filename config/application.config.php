@@ -8,9 +8,7 @@
 return array(
     'modules' => array(
         'Application',
-        'Admin',
-        'Tes',
-        'Tes2',
+        'Admin',   
         'Cool'
         ),
     'module_listener_options' => array(
