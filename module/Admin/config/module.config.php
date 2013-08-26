@@ -56,7 +56,7 @@ return array(
     ),
 //    'db' => array( //module can have a specific db configuration
 //        'driver' => 'PDO_SQLite',
-//        'dsn' => 'sqlite:' . __DIR__ .'/../data/skel.db',
+//        'dsn' => 'sqlite:' . __DIR__ .'/../data/banco.db',
 //        'driver_options' => array(
 //            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 //        )
