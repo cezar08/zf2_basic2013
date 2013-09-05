@@ -10,7 +10,7 @@ use Zend\Db\Sql\Select;
 class TableGateway extends AbstractTableGateway {
 
     /**
-     * Primary Key field name
+     * Chave primária
      *
      * @var string
      */
@@ -40,7 +40,7 @@ class TableGateway extends AbstractTableGateway {
     
     }
 
-    public function fetchAll($columns = null, $where = null, $limit = null, $offset = null) {
+    public function fetchAll($columns = null, $where = null,  $order = null, $limit = null, $offset = null) {
         $select = new Select();
         $select->from($this->getTable());
 
@@ -49,6 +49,9 @@ class TableGateway extends AbstractTableGateway {
 
         if ($where)
             $select->where($where);
+            
+        if ($order)
+            $select->order($order); 
 
         if ($limit)
             $select->limit((int) $limit);
@@ -81,7 +84,7 @@ class TableGateway extends AbstractTableGateway {
             if ($this->insert($data) < 1)
                 die("Erro ao inserir");
 
-            $object->pk = $this->lastInsertValue;
+            $object->id = $this->lastInsertValue;
         } else {
             
             if (!$this->get($id))
